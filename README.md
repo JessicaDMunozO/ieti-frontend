@@ -6,13 +6,13 @@
 
 
 
-|         *Nombres*          |    *Rol*    |
-| :-------------------------: | :-----------: |
-| Jessica Daniela Muñoz Ossa  |  Scrum Team   |
-|  José Ricardo Olarte Pardo  | Product Owner |
-| Juan Francisco Terán Roman  |  Scrum Team   |
-| Laura Nathalia Garcia Acuña |  Scrum Team   |
-|   Ricardo Pulido Rentería   | Scrum Master  |
+|         *Nombres*          |
+| :-------------------------: |
+| Jessica Daniela Muñoz Ossa  |
+|  José Ricardo Olarte Pardo  | 
+| Juan Francisco Terán Roman  | 
+| Laura Nathalia Garcia Acuña | 
+|   Ricardo Pulido Rentería   |
 
 # Prototipo visual con IA generativa
 ## Diseño web realizado con *Galileo AI*
