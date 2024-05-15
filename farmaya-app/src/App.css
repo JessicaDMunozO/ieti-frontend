@@ -1,0 +1,14 @@
+body {
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, #00FF87 0%, #60EFFF 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.bodyLogin {
+  margin-left: -200px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
