@@ -7,7 +7,7 @@ body {
 }
 
 .bodyLogin {
-  margin-left: -200px;
+  margin-left: 200px;
   height: 100vh;
   display: flex;
   align-items: center;
