@@ -32,10 +32,16 @@ const Menu = () => {
                                     <span className='ms-2 text-white'>Inventory</span>
                                 </Link>
                             </li>
+                            <li className="nav-item text-white my-1">
+                                <Link to = "" className="nav-link " aria-current="page">
+                                    <i className='bi bi-wallet2'></i>
+                                    <span className='ms-2 text-white'>Profile</span>
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                     <div className='button'>
-                        <Link to = "" className="btn btn-primary text-white" type="button" id="triggerId" aria-haspopup="true"
+                        <Link to = "/" className="btn btn-primary text-white" type="button" id="triggerId" aria-haspopup="true"
                                 aria-expanded="false">
                                     <i className='bi bi-person fs-4'></i>
                                     <span className='fs-4 ms-3'>Log out </span>
