@@ -8,9 +8,9 @@ const MainPage = () => {
 
     const baseURL = "http://localhost:80/db/orders";
 
-    useEffect(() => {
-        const localStorageToken = localStorage.getItem("token");
+    const localStorageToken = localStorage.getItem("token");
 
+    const obtainOrders = () => {
         if (localStorageToken) {
             const token = JSON.parse(localStorageToken).token;
             axios.get(baseURL, {
@@ -19,9 +19,32 @@ const MainPage = () => {
                 }
             }).then((response) => {
                 setOrders(response.data);
-            })
-        };
+            });
+        }
+    };
+
+    useEffect(() => {
+        obtainOrders();
     }, []);
+
+    const handleDeliveredClick = (orderId) => {
+        const updateOrderURL = "http://localhost:80/db/orders/update";
+
+        if (localStorageToken) {
+            const token = JSON.parse(localStorageToken).token;
+
+            const json = JSON.stringify({ "order_id": orderId });
+
+            axios.put(updateOrderURL, json, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    "authorization": `Bearer ${token}`
+                }
+            }).then(() => {
+                obtainOrders();
+            });
+        }
+    };
 
     if (!orders) return null
 
@@ -46,8 +69,7 @@ const MainPage = () => {
                                 <li className="medicine" key={i}>{medicine.medicine_name}: {medicine.amount}</li>
                             ))}
                         </ul>
-                        <button> Delivered
-                        </button>
+                        <button onClick={() => handleDeliveredClick(order.order_id)} disabled={order.delivered}> {order.delivered ? "Delivered" : "Mark as delivered"} </button>
                     </div>
                 ))}
             </div>
