@@ -1,8 +1,9 @@
 import './App.css';
 
-import Login from './components/Login/Login'
+import Login from './components/Login/Login';
 import MainPage from './components/MainPage/MainPage';
 import Menu from "./components/Menu/Menu"
+import SignUp from "./components/Signup/Signup";
 
 import {
   BrowserRouter as Router,
@@ -18,6 +19,12 @@ function App() {
           path="/"
           element={
             <Login />
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <SignUp />
           }
         />
         <Route

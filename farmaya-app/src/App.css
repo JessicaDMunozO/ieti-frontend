@@ -6,7 +6,7 @@ body {
   background-attachment: fixed;
 }
 
-.bodyLogin {
+.bodyLogin, .bodySignup {
   margin-left: 200px;
   height: 100vh;
   display: flex;
