@@ -4,6 +4,7 @@ import Login from './components/Login/Login';
 import MainPage from './components/MainPage/MainPage';
 import Menu from "./components/Menu/Menu"
 import SignUp from "./components/Signup/Signup";
+import Providers from './components/Providers/Providers';
 
 import {
   BrowserRouter as Router,
@@ -33,6 +34,15 @@ function App() {
             <div>
               <Menu />
               <MainPage />
+            </div>
+          }
+        />
+        <Route
+          path="/providers"
+          element={
+            <div>
+              <Menu />
+              <Providers />
             </div>
           }
         />
