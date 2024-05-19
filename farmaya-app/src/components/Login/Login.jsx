@@ -7,6 +7,7 @@ import "../../components/Login/Login.css"
 const Login = () => {
     const [document, setDocument] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState(false);
 
     const handleDocumentChange = (event) => {
         const value = event.target.value;
@@ -37,6 +38,7 @@ const Login = () => {
             navigate('/mainPage');
         } catch (error) {
             console.log(error);
+            setError(true);
         }  
     };
     
@@ -59,6 +61,7 @@ const Login = () => {
                 </div>
 
                 <button id="button">Submit</button>
+                {error ? <p className="error">Invalid credentials</p> : null}
                 <div className="signupContainer">
                     <p>Don't have any account?</p>
                     <a href="/signup">Sign up</a>

@@ -91,6 +91,17 @@
     transition-duration: .5s;
 }
 
+.error {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: .9em;
+    font-weight: 500;
+    color: red;
+}
+
 .signupContainer {
     margin: 0;
     display: flex;
