@@ -5,6 +5,9 @@ import MainPage from './components/MainPage/MainPage';
 import Menu from "./components/Menu/Menu"
 import SignUp from "./components/Signup/Signup";
 import Providers from './components/Providers/Providers';
+import UpdateMedicine from './components/UpdateMedicine/UpdateMedicine';
+import AddMedicine from './components/AddMedicine/AddMedicine';
+import DeleteMedicine from './components/DeleteMedicine/DeleteMedicine';
 
 import {
   BrowserRouter as Router,
@@ -43,6 +46,33 @@ function App() {
             <div>
               <Menu />
               <Providers />
+            </div>
+          }
+        />
+        <Route
+          path="/updateMedicine/:pharmacy"
+          element={
+            <div>
+              <Menu />
+              <UpdateMedicine />
+            </div>
+          }
+        />
+        <Route
+          path="/addMedicine/:pharmacy"
+          element={
+            <div>
+              <Menu />
+              <AddMedicine />
+            </div>
+          }
+        />
+        <Route
+          path="/deleteMedicine/:pharmacy"
+          element={
+            <div>
+              <Menu />
+              <DeleteMedicine />
             </div>
           }
         />

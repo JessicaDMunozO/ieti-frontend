@@ -27,12 +27,15 @@ const Providers = () => {
     const navigate = useNavigate();
 
     const handleUpdateMedicine = (pharmacy) => {
-        localStorage.setItem("pharmacy", JSON.stringify(pharmacy));
-        navigate("/updateMedicine");
+        navigate(`/updateMedicine/${pharmacy}`);
     };
 
-    const handleAddMedicine = () => {
-        navigate("/addMedicine");
+    const handleAddMedicine = (pharmacy) => {
+        navigate(`/addMedicine/${pharmacy}`);
+    };
+
+    const handleDeleteMedicine = (pharmacy) => {
+        navigate(`/deleteMedicine/${pharmacy}`);
     };
 
 
@@ -61,7 +64,8 @@ const Providers = () => {
                         </ul>
                         <div className='providers_buttons'>
                             <button className='update_button' onClick={() => handleUpdateMedicine(provider.pharmacy)}>Update medicine</button>
-                            <button className='add_button' onClick={handleAddMedicine}>Add medicine</button>
+                            <button className='add_button' onClick={() => handleAddMedicine(provider.pharmacy)}>Add medicine</button>
+                            <button className='delete_button' onClick={() => handleDeleteMedicine(provider.pharmacy)}>Delete medicine</button>
                         </div>
                     </div>
                 ))}
