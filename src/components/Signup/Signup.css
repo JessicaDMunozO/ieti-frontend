@@ -60,7 +60,7 @@
     background-color: transparent;
     color: #000000e1;
     width: 100%;
-    padding: 20px 05px 05px 10px;
+    padding: 20px 5px 5px 10px;
     outline: 0;
     border: 1px solid rgba(105, 105, 105, 0.397);
     border-radius: 10px;
@@ -75,10 +75,11 @@
     cursor: text;
     transition: 0.3s ease;
   }
-  
-  .form label .input:placeholder-shown + span {
-    top: 12.5px;
-    font-size: 0.9em;
+
+  .form .input::placeholder {
+    color:#58cf98;
+    font-size: 0.7em;
+    font-weight: 500;
   }
   
   .form label .input:focus + span,
@@ -102,6 +103,7 @@
     font-size: 16px;
     transform: .3s ease;
     background-color: #01633ae1;
+    margin-top: 20px;
   }
   
   .submit:hover {

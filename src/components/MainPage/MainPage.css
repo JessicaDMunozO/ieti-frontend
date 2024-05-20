@@ -40,6 +40,41 @@ body {
     font-size: 16px;
 }
 
+.card .document::before {
+    content: "Document: ";
+    font-weight: bold;
+}
+
+.card .address::before {
+    content: "Address: ";
+    font-weight: bold;
+}
+
+.card .delivered::before {
+    content: "Delivered: ";
+    font-weight: bold;
+}
+
+.card .doctor::before {
+    content: "Doctor: ";
+    font-weight: bold;
+}
+
+.card .domicile::before {
+    content: "Domicile: ";
+    font-weight: bold;
+}
+
+.card .provider::before {
+    content: "Provider: ";
+    font-weight: bold;
+}
+
+.card .medicines::before {
+    content: "Medicines: ";
+    font-weight: bold;
+}
+
 .card .document,
 .card .address,
 .card .delivered,
