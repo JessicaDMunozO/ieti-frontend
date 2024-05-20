@@ -54,11 +54,11 @@ const Providers = () => {
                         <ul>
                             {provider.medicines.map((medicine, i) => (
                                 <div className='medicine_data'>
-                                    <li className="medicine_name" key={i + medicine.medicine_name}>Medicine: {medicine.medicine_name}</li>
-                                    <li className="medicine_description" key={i + medicine.description}>Description: {medicine.description}</li>
-                                    <li className="medicine_laboratory" key={i + medicine.laboratory}>Laboratory: {medicine.laboratory}</li>
-                                    <li className="medicine_price" key={i + medicine.price}>Price: {medicine.price}</li>
-                                    <li className="medicine_stock" key={i + medicine.stock}>Stock: {medicine.stock}</li>
+                                    <li className="medicine_name" key={i + medicine.medicine_name}>{medicine.medicine_name}</li>
+                                    <li className="medicine_description" key={i + medicine.description}>{medicine.description}</li>
+                                    <li className="medicine_laboratory" key={i + medicine.laboratory}>{medicine.laboratory}</li>
+                                    <li className="medicine_price" key={i + medicine.price}>{medicine.price}</li>
+                                    <li className="medicine_stock" key={i + medicine.stock}>{medicine.stock}</li>
                                 </div>
                             ))}
                         </ul>

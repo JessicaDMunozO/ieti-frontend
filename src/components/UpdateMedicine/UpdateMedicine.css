@@ -1,3 +1,10 @@
+.bodyUpdateMedicine {
+  margin-left: 250px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 .form {
     width: 400px;
     height: auto;
@@ -68,7 +75,7 @@
   
   .form label .input + span {
     color: rgba(255, 255, 255, 0.5);
-    position: absolute;
+    position: relative;
     left: 10px;
     top: 0px;
     font-size: 0.9em;
@@ -84,7 +91,7 @@
   .form label .input:focus + span,
   .form label .input:valid + span {
     color: #58cf98;
-    top: 0px;
+    top: -47px;
     font-size: 0.7em;
     font-weight: 600;
   }
@@ -106,16 +113,4 @@
   
   .submit:hover {
     background-color: #58cf98;
-  }
-  
-  @keyframes pulse {
-    from {
-      transform: scale(0.9);
-      opacity: 1;
-    }
-  
-    to {
-      transform: scale(1.8);
-      opacity: 0;
-    }
   }
