@@ -14,6 +14,9 @@ const Prescriptions = () => {
     const [doctor_name, setDoctorName] = useState("");
     const [patient_document, setPatientDocument] = useState("");
     const [patient_name, setPatientName] = useState("");
+    const [medicines, setMedicines] = useState([{ medicine_name: "", amount: "", authorization_required: "" }]);
+    const [medicineQuantity, setMedicineQuantity] = useState(1);
+
 
     const localStorageToken = localStorage.getItem("token");
 
@@ -62,6 +65,21 @@ const Prescriptions = () => {
         setPatientName(value);
     };
 
+    const handleMedicineChange = (index, field, value) => {
+        const newMedicines = [...medicines];
+        newMedicines[index][field] = value;
+        setMedicines(newMedicines);
+    };
+    
+    const handleMedicineQuantityChange = (event) => {
+        const value = parseInt(event.target.value, 10);
+        setMedicineQuantity(value);
+    
+        const newMedicines = Array.from({ length: value }, (_, i) => medicines[i] || { medicine_name: "", amount: "", authorization_required: "" });
+        setMedicines(newMedicines);
+    };
+
+    
     const navigate = useNavigate();
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -86,32 +104,55 @@ const Prescriptions = () => {
         <div className='bodyCreatePrescriptions'>
             <form className="form" onSubmit={handleSubmit}>
                 <p className="title">New Prescription test</p>
-                <div>
-                    <label>
-                        <input className="input" type="text" required="" value={medicine_name} onChange={handleMedicineNameChange} />
-                        <span>medicine_name</span><br></br>
-                        <input className="input" type="text" required="" value={amount} onChange={handleAmountChange} />
-                        <span>amount</span><br></br>
-                        <input className="input" type="text" required="" value={authorization_required} onChange={handleAuthorizationRequiredChange} />
-                        <span>authorization_required</span><br></br>
-                        <input className="input" type="text" required="" value={domicile} onChange={handleDomicileChange} />
-                        <span>domicile</span><br></br>
-                        <input className="input" type="text" required="" value={address} onChange={handleAddressChange} />
-                        <span>address</span><br></br>
-                        <input className="input" type="text" required="" value={provider} onChange={handleProviderChange} />
-                        <span>provider</span><br></br>
-                        <input className="input" type="text" required="" value={doctor_name} onChange={handleDoctorNameChange} />
-                        <span>doctor_name</span><br></br>
-                        <input className="input" type="text" required="" value={patient_document} onChange={handlePatientDocumentChange} />
-                        <span>patient_document</span><br></br>
-                        <input className="input" type="text" required="" value={patient_name} onChange={handlePatientNameChange} />
-                        <span>patient_name</span><br></br>
-                    </label>
-                </div>
+                <label>
+                    <input className="input" type="number" required value={medicineQuantity} onChange={handleMedicineQuantityChange} />
+                    <span>quantity</span><br></br>
+                </label>
+                {medicines.map((medicine, index) => (
+                    <div key={index}>
+                        <label>
+                            <input className="input" type="text" required value={medicine.medicine_name} onChange={(e) => handleMedicineChange(index, 'medicine_name', e.target.value)} />
+                            <span>medicine_name</span><br></br>
+                        </label>
+                        <label>
+                            <input className="input" type="text" required value={medicine.amount} onChange={(e) => handleMedicineChange(index, 'amount', e.target.value)} />
+                            <span>amount</span><br></br>
+                        </label>
+                        <label>
+                            <input className="input" type="text" required value={medicine.authorization_required} onChange={(e) => handleMedicineChange(index, 'authorization_required', e.target.value)} />
+                            <span>authorization_required</span><br></br>
+                        </label>
+                    </div>
+                ))}
+                <label>
+                    <input className="input" type="text" required value={domicile} onChange={handleDomicileChange} />
+                    <span>domicile</span><br></br>
+                </label>
+                <label>
+                    <input className="input" type="text" required value={address} onChange={handleAddressChange} />
+                    <span>address</span><br></br>
+                </label>
+                <label>
+                    <input className="input" type="text" required value={provider} onChange={handleProviderChange} />
+                    <span>provider</span><br></br>
+                </label>
+                <label>
+                    <input className="input" type="text" required value={doctor_name} onChange={handleDoctorNameChange} />
+                    <span>doctor_name</span><br></br>
+                </label>
+                <label>
+                    <input className="input" type="text" required value={patient_document} onChange={handlePatientDocumentChange} />
+                    <span>patient_document</span><br></br>
+                </label>
+                <label>
+                    <input className="input" type="text" required value={patient_name} onChange={handlePatientNameChange} />
+                    <span>patient_name</span><br></br>
+                </label>
                 <button className="submit">Add medicine</button>
             </form>
         </div>
     );
+    
 }
 
 export default Prescriptions;
