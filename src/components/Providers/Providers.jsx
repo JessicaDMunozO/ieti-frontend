@@ -10,10 +10,11 @@ const Providers = () => {
     const baseURL = "http://localhost:80/db/providers";
 
     const localStorageToken = localStorage.getItem("token");
+    const role = JSON.parse(localStorage.getItem("role"));
 
     useEffect(() => {
         if (localStorageToken) {
-            const token = JSON.parse(localStorageToken).token;
+            const token = JSON.parse(localStorageToken);
             axios.get(baseURL, {
                 headers: {
                     "authorization": `Bearer ${token}`
@@ -63,9 +64,9 @@ const Providers = () => {
                             ))}
                         </ul>
                         <div className='providers_buttons'>
-                            <button className='update_button' onClick={() => handleUpdateMedicine(provider.pharmacy)}>Update medicine</button>
-                            <button className='add_button' onClick={() => handleAddMedicine(provider.pharmacy)}>Add medicine</button>
-                            <button className='delete_button' onClick={() => handleDeleteMedicine(provider.pharmacy)}>Delete medicine</button>
+                            <button className='update_button' onClick={() => handleUpdateMedicine(provider.pharmacy)} disabled={role === "doctor"}>Update medicine</button>
+                            <button className='add_button' onClick={() => handleAddMedicine(provider.pharmacy)} disabled={role === "doctor"}>Add medicine</button>
+                            <button className='delete_button' onClick={() => handleDeleteMedicine(provider.pharmacy)} disabled={role === "doctor"}>Delete medicine</button>
                         </div>
                     </div>
                 ))}
