@@ -8,6 +8,7 @@ import Providers from './components/Providers/Providers';
 import UpdateMedicine from './components/UpdateMedicine/UpdateMedicine';
 import AddMedicine from './components/AddMedicine/AddMedicine';
 import DeleteMedicine from './components/DeleteMedicine/DeleteMedicine';
+import Prescriptions from './components/Prescriptions/Prescriptions';
 
 import {
   BrowserRouter as Router,
@@ -37,6 +38,15 @@ function App() {
             <div>
               <Menu />
               <MainPage />
+            </div>
+          }
+        />
+        <Route
+          path="/newPrescription"
+          element={
+            <div>
+              <Menu />
+              <Prescriptions />
             </div>
           }
         />
