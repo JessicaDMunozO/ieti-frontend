@@ -12,7 +12,7 @@ const MainPage = () => {
 
     const obtainOrders = () => {
         if (localStorageToken) {
-            const token = JSON.parse(localStorageToken).token;
+            const token = JSON.parse(localStorageToken);
             axios.get(baseURL, {
                 headers: {
                     "authorization": `Bearer ${token}`

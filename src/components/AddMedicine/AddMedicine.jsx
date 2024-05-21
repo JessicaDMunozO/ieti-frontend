@@ -42,7 +42,7 @@ const AddMedicine = () => {
     const navigate = useNavigate();
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const token = JSON.parse(localStorageToken).token;
+        const token = JSON.parse(localStorageToken);
         const baseURL = "http://localhost:80/db/providers/add";
         const json = JSON.stringify({ "pharmacy": pharmacy, "description": description, "medicine_name": medicine, "laboratory": laboratory,  "price": price, "stock": stock });
 
