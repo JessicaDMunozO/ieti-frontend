@@ -128,3 +128,16 @@ body {
 .card .delete_button:hover {
     background: #facbcb;
 }
+
+    
+
+.addProvider_button {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0px;
+    background: #65a3e0;
+    background-color: #095ddb;
+    position: absolute;
+    top: 5%;
+    right: 25%;
+}

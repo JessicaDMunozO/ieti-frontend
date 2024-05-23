@@ -7,6 +7,8 @@ import "../../components/Providers/Providers.css"
 const Providers = () => {
     const [providers, setProviders] = useState();
 
+    const [search, setSearch] = useState("");
+
     const baseURL = "http://localhost:80/db/providers";
 
     const localStorageToken = localStorage.getItem("token");
@@ -20,10 +22,13 @@ const Providers = () => {
                     "authorization": `Bearer ${token}`
                 }
             }).then((response) => {
-                setProviders(response.data);
+                const filteredProviders = response.data.filter(provider => {
+                    return provider.pharmacy.toLowerCase().includes(search.toLowerCase()) || provider.medicines.some(medicine => medicine.medicine_name.toLowerCase().includes(search.toLowerCase()));
+                });
+                setProviders(filteredProviders);
             });
         }
-    }, []);
+    }, [search]);
 
     const navigate = useNavigate();
 
@@ -39,12 +44,22 @@ const Providers = () => {
         navigate(`/deleteMedicine/${pharmacy}`);
     };
 
+    const handleSearchChange = (e) => {
+        setSearch(e.target.value);
+    }
+
+    const handleAddProvider = () => {
+        navigate(`/addProvider`);
+    };
+
 
     if (!providers) return null
 
     return (
         <div>
             <h1>Providers</h1>
+            <button className='addProvider_button' onClick={handleAddProvider}>Add provider</button>
+            <input type="text" value={search} onChange={handleSearchChange} placeholder="providers or medicines... " />
             <div className='cards-container'>
                 {providers.map((provider) => (
                     <div className="card" key={provider._id}>
