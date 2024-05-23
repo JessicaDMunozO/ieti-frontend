@@ -7,25 +7,17 @@ const UpdateUser = () => {
   const [userInfo, setUserInfo] = useState({});
   const [error, setError] = useState(false);
 
-  const [name, setName] = useState("");
-  const [document, setDocument] = useState("");
+
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [phone, setPhone] = useState("");
   const [eps, setEps] = useState("");
-  const [password, setPassword] = useState("");
+ ;
 
   const localStorageToken = localStorage.getItem("token");
 
-  const handleNameChange = (event) => {
-    const value = event.target.value;
-    setName(value);
-  };
 
-  const handleDocumentChange = (event) => {
-    const value = event.target.value;
-    setDocument(value);
-  };
+
 
   const handleAddressChange = (event) => {
     const value = event.target.value;
@@ -47,17 +39,13 @@ const UpdateUser = () => {
     setEps(value);
   };
 
-  const handlePasswordChange = (event) => {
-    const value = event.target.value;
-    setPassword(value);
-  };
 
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     const token = JSON.parse(localStorageToken);
     const baseURL = "http://localhost:80/db/user/update";
-    const json = JSON.stringify({ "document": document, "name": name, "eps": eps, "address": address, "city": city, "phone": phone, "password": password });
+    const json = JSON.stringify({  "document": userInfo.document, "eps": eps, "address": address, "city": city, "phone": phone });
 
     try {
       await axios.put(baseURL, json, {
@@ -91,8 +79,7 @@ const UpdateUser = () => {
         const userData = response.data[0];
         setUserInfo(userData);
 
-        setName(userData.name || "");
-        setDocument(userData.document || "");
+      
         setAddress(userData.address || "");
         setCity(userData.city || "");
         setPhone(userData.phone || "");
@@ -113,24 +100,8 @@ const UpdateUser = () => {
         <p className="title">Update Personal Data</p>
         <div>
           <label>
-            <input
-              className="input"
-              type="text"
-              required
-              value={document}
-              onChange={handleDocumentChange}
-              placeholder="Document"
-            />
-            <span>Document</span><br />
-            <input
-              className="input"
-              type="text"
-              required
-              value={name}
-              onChange={handleNameChange}
-              placeholder="Name"
-            />
-            <span>Name</span><br />
+            
+            
             <input
               className="input"
               type="text"
@@ -158,17 +129,9 @@ const UpdateUser = () => {
               placeholder="City"
             />
             <span>City</span><br />
-            <input
-              className="input"
-              type="text"
-              required
-              value={phone}
-              onChange={handlePhoneChange}
-              placeholder="Phone"
-            />
-            <span>Phone</span><br />
-            <input className="input" type="password" required="" value={password} onChange={handlePasswordChange} />
-            <span>Password</span><br></br>
+            <input className="input" type="text" required="" value={phone} onChange={handlePhoneChange}  placeholder="Phone"/>
+              <span>Phone</span><br></br>
+        
           </label>
         </div>
         <button className="submit">Update</button>
