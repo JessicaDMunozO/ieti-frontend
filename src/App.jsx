@@ -8,6 +8,8 @@ import Providers from './components/Providers/Providers';
 import UpdateMedicine from './components/UpdateMedicine/UpdateMedicine';
 import AddMedicine from './components/AddMedicine/AddMedicine';
 import DeleteMedicine from './components/DeleteMedicine/DeleteMedicine';
+import Profile from './components/Profile/Profile';
+import UpdateUser from './components/UpdateUser/UpdateUser';
 
 import {
   BrowserRouter as Router,
@@ -73,6 +75,24 @@ function App() {
             <div>
               <Menu />
               <DeleteMedicine />
+            </div>
+          }
+        />
+         <Route
+          path="/profile/:document"
+          element={
+            <div>
+              <Menu />
+              <Profile />
+            </div>
+          }
+        />
+         <Route
+          path="/updateProfile/:document"
+          element={
+            <div>
+              <Menu />
+              <UpdateUser />
             </div>
           }
         />

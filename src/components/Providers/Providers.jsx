@@ -43,7 +43,7 @@ const Providers = () => {
     if (!providers) return null
 
     return (
-        <div>
+        <div className='bodyProviders'>
             <h1>Providers</h1>
             <div className='cards-container'>
                 {providers.map((provider) => (
