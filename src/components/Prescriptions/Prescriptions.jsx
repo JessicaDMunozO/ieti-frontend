@@ -5,9 +5,6 @@ import axios from "axios";
 import "../../components/Prescriptions/Prescriptions.css"
 
 const Prescriptions = () => {
-    const [medicine_name, setMedicineName] = useState("");
-    const [amount, setAmount] = useState("");
-    const [authorization_required, setAuthorizationRequired] = useState("");
     const [domicile, setDomicile] = useState("");
     const [address, setAddress] = useState("");
     const [provider, setProvider] = useState("");
@@ -19,21 +16,6 @@ const Prescriptions = () => {
 
 
     const localStorageToken = localStorage.getItem("token");
-
-    const handleMedicineNameChange = (event) => {
-        const value = event.target.value;
-        setMedicineName(value);
-    };
-
-    const handleAmountChange = (event) => {
-        const value = event.target.value;
-        setAmount(value);
-    };
-
-    const handleAuthorizationRequiredChange = (event) => {
-        const value = event.target.value;
-        setAuthorizationRequired(value);
-    };
 
     const handleDomicileChange = (event) => {
         const value = event.target.value;
@@ -75,7 +57,10 @@ const Prescriptions = () => {
         const value = parseInt(event.target.value, 10);
         setMedicineQuantity(value);
     
-        const newMedicines = Array.from({ length: value }, (_, i) => medicines[i] || { medicine_name: "", amount: "", authorization_required: "" });
+        const newMedicines = Array.from({ length: value }, (_, i) => medicines[i] || { 
+            medicine_name: "", 
+            amount: "", 
+            authorization_required: "" });
         setMedicines(newMedicines);
     };
 
@@ -86,9 +71,11 @@ const Prescriptions = () => {
         const token = JSON.parse(localStorageToken).token;
         const baseURL = "http://localhost:80/db/orders/new";
         const json = JSON.stringify({ 
-            "medicine_name": medicine_name, 
-            "amount": amount, 
-            "authorization_required": authorization_required, 
+            "medicines": medicines.map(medicine => ({
+                medicine_name: medicine.medicine_name,
+                amount: medicine.amount,
+                authorization_required: medicine.authorization_required
+            })),
             "domicile": domicile,  
             "address": address, 
             "provider": provider,  
@@ -116,49 +103,49 @@ const Prescriptions = () => {
                 <p className="title">New Prescription test</p>
                 <label>
                     <input className="input" type="number" required="" value={medicineQuantity} onChange={handleMedicineQuantityChange} />
-                    <span>quantity</span><br></br>
+                    <span>Quantity</span><br></br>
                 </label>
                 {medicines.map((medicine, index) => (
                     <div key={index}>
                         <label>
                             <input className="input" type="text" required="" value={medicine.medicine_name} onChange={(e) => handleMedicineChange(index, 'medicine_name', e.target.value)} />
-                            <span>medicine_name</span><br></br>
+                            <span>Medicine Name</span><br></br>
                         </label>
                         <label>
                             <input className="input" type="text" required="" value={medicine.amount} onChange={(e) => handleMedicineChange(index, 'amount', e.target.value)} />
-                            <span>amount</span><br></br>
+                            <span>Amount</span><br></br>
                         </label>
                         <label>
                             <input className="input" type="text" required="" value={medicine.authorization_required} onChange={(e) => handleMedicineChange(index, 'authorization_required', e.target.value)} />
-                            <span>authorization_required</span><br></br>
+                            <span>Authorization Required</span><br></br>
                         </label>
                     </div>
                 ))}
                 <label>
                     <input className="input" type="text" required="" value={domicile} onChange={handleDomicileChange} />
-                    <span>domicile</span><br></br>
+                    <span>Domicile</span><br></br>
                 </label>
                 <label>
                     <input className="input" type="text" required="" value={address} onChange={handleAddressChange} />
-                    <span>address</span><br></br>
+                    <span>Address</span><br></br>
                 </label>
                 <label>
                     <input className="input" type="text" required="" value={provider} onChange={handleProviderChange} />
-                    <span>provider</span><br></br>
+                    <span>Provider</span><br></br>
                 </label>
                 <label>
                     <input className="input" type="text" required="" value={doctor_name} onChange={handleDoctorNameChange} />
-                    <span>doctor_name</span><br></br>
+                    <span>Doctor Name</span><br></br>
                 </label>
                 <label>
                     <input className="input" type="text" required="" value={patient_document} onChange={handlePatientDocumentChange} />
-                    <span>patient_document</span><br></br>
+                    <span>Patient Document</span><br></br>
                 </label>
                 <label>
                     <input className="input" type="text" required="" value={patient_name} onChange={handlePatientNameChange} />
-                    <span>patient_name</span><br></br>
+                    <span>Patient Name</span><br></br>
                 </label>
-                <button className="submit">Add medicine</button>
+                <button className="submit">Add Medicine</button>
             </form>
         </div>
     );
