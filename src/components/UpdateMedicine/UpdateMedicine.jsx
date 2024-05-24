@@ -36,7 +36,7 @@ const UpdateMedicine = () => {
     const navigate = useNavigate();
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const token = JSON.parse(localStorageToken).token;
+        const token = JSON.parse(localStorageToken);
         const baseURL = "http://localhost:80/db/providers/update";
         const json = JSON.stringify({ "pharmacy": pharmacy, "medicine_name": medicine, "laboratory": laboratory,  "price": price, "stock": stock });
 

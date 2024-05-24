@@ -18,7 +18,7 @@ const DeleteMedicine = () => {
     const navigate = useNavigate();
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const token = JSON.parse(localStorageToken).token;
+        const token = JSON.parse(localStorageToken);
         const baseURL = "http://localhost:80/db/providers/" + pharmacy + "/" + medicine;
 
         try {

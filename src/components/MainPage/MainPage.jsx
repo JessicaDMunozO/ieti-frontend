@@ -12,7 +12,8 @@ const MainPage = () => {
 
     const obtainOrders = () => {
         if (localStorageToken) {
-            const token = JSON.parse(localStorageToken).token;
+
+            const token = JSON.parse(localStorageToken);
             axios.get(baseURL, {
                 headers: {
                     "authorization": `Bearer ${token}`
@@ -49,7 +50,7 @@ const MainPage = () => {
     if (!orders) return null
 
     return (
-        <div>
+        <div className='bodyMainPage'>
             <h1>Orders</h1>
             <div className='cards-container'>
                 {orders.map((order) => (
@@ -57,13 +58,15 @@ const MainPage = () => {
                         <div className="card-border-top">
                         </div>
                         <span>Patient {order.patient_name}</span>
-                        <p className="document"> Document: {order.patient_document}</p>
-                        <p className="address"> Address: {order.address}</p>
-                        {order.delivered ? <p className="delivered">State: delivered</p> : <p className="delivered">State: pending</p>}
-                        <p className="doctor"> Doctor: {order.doctor_name}</p>
-                        {order.domicile ? <p className="domicile">Domicile: Yes</p> : <p className="domicile">Domicile: No</p>}
-                        <p className="provider"> Provider: {order.provider}</p>
-                        <p className="medicines"> Medicines: </p>
+
+                        <p className="document">{order.patient_document}</p>
+                        <p className="address">{order.address}</p>
+                        {order.delivered ? <p className="delivered">delivered</p> : <p className="delivered">pending</p>}
+                        <p className="doctor">{order.doctor_name}</p>
+                        {order.domicile ? <p className="domicile">Yes</p> : <p className="domicile">No</p>}
+                        <p className="provider">{order.provider}</p>
+                        <p className="medicines"></p>
+
                         <ul>
                             {order.medicines.map((medicine, i) => (
                                 <li className="medicine" key={i}>{medicine.medicine_name}: {medicine.amount}</li>
