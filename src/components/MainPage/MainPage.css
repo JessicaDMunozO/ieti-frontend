@@ -1,0 +1,118 @@
+body {
+    height: 100vh;
+    margin: 0;
+    position: absolute;
+    left: 20%;
+    color: #013620e1;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+    margin: 20px;
+    position: relative;
+}
+
+.card {
+    width: 190px;
+    height: auto;
+    background: #01633ae1;
+    border-radius: 15px;
+    box-shadow: 1px 5px 60px 0px #01633ae1;
+    padding: 15px;
+}
+
+.card .card-border-top {
+    width: 90%;
+    height: 2%;
+    background: #58cf98;
+    margin: auto;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.card span {
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.card .document::before {
+    content: "Document: ";
+    font-weight: bold;
+}
+
+.card .address::before {
+    content: "Address: ";
+    font-weight: bold;
+}
+
+.card .delivered::before {
+    content: "Delivered: ";
+    font-weight: bold;
+}
+
+.card .doctor::before {
+    content: "Doctor: ";
+    font-weight: bold;
+}
+
+.card .domicile::before {
+    content: "Domicile: ";
+    font-weight: bold;
+}
+
+.card .provider::before {
+    content: "Provider: ";
+    font-weight: bold;
+}
+
+.card .medicines::before {
+    content: "Medicines: ";
+    font-weight: bold;
+}
+
+.card .document,
+.card .address,
+.card .delivered,
+.card .doctor,
+.card .domicile,
+.card .provider,
+.card .medicines,
+.card .medicine {
+    font-weight: 400;
+    color: white;
+    display: block;
+    padding-top: 3px;
+    font-size: 12px;
+}
+
+.card .medicine {
+    margin-left: -20px;
+}
+
+.card button {
+    padding: 8px 25px;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    border: none;
+    margin-top: 30px;
+    background: #58cf98;
+    color: white;
+    font-weight: 600;
+}
+
+.card button:disabled {
+    background-color: #999797;
+    color: #272626;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.card button:hover {
+    background: #afe7cd;
+}

@@ -1,0 +1,46 @@
+.row {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    padding: 10px;
+    margin: 0;
+    background-color: #01633ae1;
+  }
+
+  #parentM {
+    list-style: none;
+    margin: 0; 
+    padding: 20px;
+  }
+  
+  #parentM li {
+    margin-bottom: 30px;
+  }
+  
+  #parentM li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px; 
+  }
+  
+  #parentM li a:hover {
+    background-color: #58cf98;
+  }
+
+  .button {
+    background-color: #00FF87;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 52px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+  }
+
+  .button:hover {
+    background-color: #58cf98;
+  }
