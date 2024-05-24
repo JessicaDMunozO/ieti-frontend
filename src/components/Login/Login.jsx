@@ -32,11 +32,13 @@ const Login = () => {
                 }
             });
     
+
             const token = response.data.token;
             const role = response.data.role;
 
             localStorage.setItem("token", JSON.stringify(token));
             localStorage.setItem("role", JSON.stringify(role));
+
     
             navigate('/mainPage');
         } catch (error) {

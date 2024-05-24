@@ -12,6 +12,8 @@ const Signup = () => {
     const [phone, setPhone] = useState("");
     const [eps, setEps] = useState("");
     const [password, setPassword] = useState("");
+    const [role, setRole] = useState("");
+
 
     const handleNameChange = (event) => {
         const value = event.target.value;
@@ -48,11 +50,18 @@ const Signup = () => {
         setPassword(value);
     };
 
+    const handleRoleChange = (event) => {
+        const value = event.target.value;
+        setRole(value);
+    };
+
     const navigate = useNavigate();
     const handleSubmit = async (event) => {
         event.preventDefault();
         const baseURL = "http://localhost:80/db/user/register";
-        const json = JSON.stringify({ "name": name, "document": document, "address": address, "city": city, "phone": phone, "eps": eps, "password": password });
+
+        const json = JSON.stringify({ "name": name, "document": document, "address": address, "city": city, "phone": phone, "eps": eps, "password": password, "role": role });
+
 
         try {
             await axios.post(baseURL, json, {
@@ -77,39 +86,63 @@ const Signup = () => {
                     </label>
 
                     <label>
-                        <input className="input" type="text" placeholder="" required="" value={document} onChange={handleDocumentChange} />
+
+                        <input className="input" type="text" required="" value={document} onChange={handleDocumentChange} />
+
                         <span>Document</span>
                     </label>
                 </div>
 
                 <div className="flex">
                     <label>
-                        <input className="input" type="text" placeholder="" required="" value={address} onChange={handleAddressChange} />
+
+                        <input className="input" type="text" required="" value={address} onChange={handleAddressChange} />
+
                         <span>Address</span>
                     </label>
 
                     <label>
-                        <input className="input" type="text" placeholder="" required="" value={city} onChange={handleCityChange} />
+
+                        <input className="input" type="text" required="" value={city} onChange={handleCityChange} />
+
                         <span>City</span>
                     </label>
                 </div>
 
                 <div className="flex">
                     <label>
-                        <input className="input" type="text" placeholder="" required="" value={phone} onChange={handlePhoneChange} />
+
+                        <input className="input" type="text" required="" value={phone} onChange={handlePhoneChange} />
+
                         <span>Phone</span>
                     </label>
 
                     <label>
-                        <input className="input" type="text" placeholder="" required="" value={eps} onChange={handleEPSChange} />
+
+                        <input className="input" type="text" required="" value={eps} onChange={handleEPSChange} />
+
                         <span>EPS</span>
                     </label>
                 </div>
 
                 <label>
-                    <input className="input" type="password" placeholder="" required="" value={password} onChange={handlePasswordChange} />
-                    <span>Password</span><br></br>
+                    <input className="input" type="password" placeholder="Password" required="" value={password} onChange={handlePasswordChange} />
                 </label>
+
+                <div className="container">
+                    <form>
+                        <label>
+                            <input type="radio" name="radio" value="doctor" onChange={handleRoleChange}/>
+                                <span>Doctor</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio" value="farmacia" onChange={handleRoleChange}/>
+                                <span>Pharmacy</span>
+                        </label>
+                    </form>
+                </div>
+
+
                 <button className="submit">Submit</button>
             </form>
         </div>
