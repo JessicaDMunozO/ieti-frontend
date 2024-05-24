@@ -2,16 +2,52 @@
     height: 100vh;
    
     margin: 0;
-    position: absolute;
+    position: relative;
     left: 20%;
     color: #013620e1;
 
 }*/
 
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    margin: 30px;
+}
+
+.input_search {
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    width: 100%;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #c2f0db;
+    color: #0d0c22;
+    box-shadow: 0 0 5px #58cf98, 0 0 0 10px #f5f5f5eb;
+    transition: .3s ease;
+}
+
+.input_search::placeholder {
+    color: #777;
+}
+
+.icon {
+    position: absolute;
+    left: 1rem;
+    fill: #777;
+    width: 1rem;
+    height: 1rem;
+}
+
 .cards-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0px;
+    row-gap: 100px;
     margin: 20px;
     position: relative;
     display: flex;
@@ -132,4 +168,27 @@
 
 .card .delete_button:hover {
     background: #facbcb;
+}
+
+.addProvider_button {
+    position: absolute;
+    left: 800px;
+    border: 2px solid #FEDA63;
+    background-color: #FEDA63;
+    border-radius: 0.9em;
+    padding: 0.8em 1.2em 0.8em 1em;
+    transition: all ease-in-out 0.2s;
+    font-size: 16px;
+}
+
+.addProvider_button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0d0c22;
+    font-weight: 600;
+}
+
+.addProvider_button:hover {
+    background-color: #FEE9A3;
 }
