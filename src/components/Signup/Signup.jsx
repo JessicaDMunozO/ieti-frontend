@@ -14,6 +14,7 @@ const Signup = () => {
     const [password, setPassword] = useState("");
     const [role, setRole] = useState("");
 
+
     const handleNameChange = (event) => {
         const value = event.target.value;
         setName(value);
@@ -58,7 +59,9 @@ const Signup = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const baseURL = "http://localhost:80/db/user/register";
+
         const json = JSON.stringify({ "name": name, "document": document, "address": address, "city": city, "phone": phone, "eps": eps, "password": password, "role": role });
+
 
         try {
             await axios.post(baseURL, json, {
@@ -83,31 +86,41 @@ const Signup = () => {
                     </label>
 
                     <label>
+
                         <input className="input" type="text" required="" value={document} onChange={handleDocumentChange} />
+
                         <span>Document</span>
                     </label>
                 </div>
 
                 <div className="flex">
                     <label>
+
                         <input className="input" type="text" required="" value={address} onChange={handleAddressChange} />
+
                         <span>Address</span>
                     </label>
 
                     <label>
+
                         <input className="input" type="text" required="" value={city} onChange={handleCityChange} />
+
                         <span>City</span>
                     </label>
                 </div>
 
                 <div className="flex">
                     <label>
+
                         <input className="input" type="text" required="" value={phone} onChange={handlePhoneChange} />
+
                         <span>Phone</span>
                     </label>
 
                     <label>
+
                         <input className="input" type="text" required="" value={eps} onChange={handleEPSChange} />
+
                         <span>EPS</span>
                     </label>
                 </div>
@@ -128,6 +141,7 @@ const Signup = () => {
                         </label>
                     </form>
                 </div>
+
 
                 <button className="submit">Submit</button>
             </form>

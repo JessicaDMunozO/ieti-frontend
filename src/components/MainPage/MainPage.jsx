@@ -12,7 +12,9 @@ const MainPage = () => {
 
     const obtainOrders = () => {
         if (localStorageToken) {
-            const token = JSON.parse(localStorageToken).token;
+
+            const token = JSON.parse(localStorageToken);
+
             axios.get(baseURL, {
                 headers: {
                     "authorization": `Bearer ${token}`
@@ -57,6 +59,7 @@ const MainPage = () => {
                         <div className="card-border-top">
                         </div>
                         <span>Patient {order.patient_name}</span>
+
                         <p className="document">{order.patient_document}</p>
                         <p className="address">{order.address}</p>
                         {order.delivered ? <p className="delivered">delivered</p> : <p className="delivered">pending</p>}
@@ -64,6 +67,7 @@ const MainPage = () => {
                         {order.domicile ? <p className="domicile">Yes</p> : <p className="domicile">No</p>}
                         <p className="provider">{order.provider}</p>
                         <p className="medicines"></p>
+
                         <ul>
                             {order.medicines.map((medicine, i) => (
                                 <li className="medicine" key={i}>{medicine.medicine_name}: {medicine.amount}</li>
