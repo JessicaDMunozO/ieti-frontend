@@ -100,7 +100,7 @@ const Prescriptions = () => {
     return (
         <div className='bodyCreatePrescriptions'>
             <form className="form" onSubmit={handleSubmit}>
-                <p className="title">New Prescription test</p>
+                <p className="title">New Prescription</p>
                 <label>
                     <input className="input" type="number" required="" value={medicineQuantity} onChange={handleMedicineQuantityChange} />
                     <span>Quantity</span><br></br>
@@ -145,7 +145,7 @@ const Prescriptions = () => {
                     <input className="input" type="text" required="" value={patient_name} onChange={handlePatientNameChange} />
                     <span>Patient Name</span><br></br>
                 </label>
-                <button className="submit">Add Medicine</button>
+                <button className="submit">Create Order</button>
             </form>
         </div>
     );
