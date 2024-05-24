@@ -24,7 +24,7 @@ const Menu = () => {
                                 </Link>
                             </li>
                             <li className="nav-item text-white my-1">
-                                <Link to = "" className="nav-link " aria-current="page">
+                                <Link to = "/newPrescription" className="nav-link " aria-current="page">
                                     <i className='bi bi-shop'></i>
                                     <span className='ms-2 text-white'>Prescriptions</span>
                                 </Link>

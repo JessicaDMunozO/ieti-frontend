@@ -9,9 +9,9 @@ import AddProvider from './components/AddProvider/AddProvider';
 import UpdateMedicine from './components/UpdateMedicine/UpdateMedicine';
 import AddMedicine from './components/AddMedicine/AddMedicine';
 import DeleteMedicine from './components/DeleteMedicine/DeleteMedicine';
+import Prescriptions from './components/Prescriptions/Prescriptions';
 import Profile from './components/Profile/Profile';
 import UpdateUser from './components/UpdateUser/UpdateUser';
-
 
 import {
   BrowserRouter as Router,
@@ -41,6 +41,15 @@ function App() {
             <div>
               <Menu />
               <MainPage />
+            </div>
+          }
+        />
+        <Route
+          path="/newPrescription"
+          element={
+            <div>
+              <Menu />
+              <Prescriptions />
             </div>
           }
         />
