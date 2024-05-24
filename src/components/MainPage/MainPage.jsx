@@ -14,7 +14,6 @@ const MainPage = () => {
         if (localStorageToken) {
 
             const token = JSON.parse(localStorageToken);
-
             axios.get(baseURL, {
                 headers: {
                     "authorization": `Bearer ${token}`
@@ -51,7 +50,7 @@ const MainPage = () => {
     if (!orders) return null
 
     return (
-        <div>
+        <div className='bodyMainPage'>
             <h1>Orders</h1>
             <div className='cards-container'>
                 {orders.map((order) => (

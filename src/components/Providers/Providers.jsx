@@ -56,7 +56,7 @@ const Providers = () => {
     if (!providers) return null
 
     return (
-        <div>
+        <div className='bodyProviders'>
             <h1>Providers</h1>
             <button className='addProvider_button' onClick={handleAddProvider} disabled={role === "doctor"}>
                 <span>

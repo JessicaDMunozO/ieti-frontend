@@ -1,10 +1,10 @@
-body {
+.bodyMainPage {
     height: 100vh;
     margin: 0;
     position: absolute;
     left: 20%;
     color: #013620e1;
-}
+}*/
 
 .cards-container {
     display: grid;
