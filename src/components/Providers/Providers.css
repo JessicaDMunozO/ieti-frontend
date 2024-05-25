@@ -1,0 +1,197 @@
+.bodyProviders {
+    height: 100vh;
+    position: relative;
+    left: 20%;
+    color: #013620e1;
+}
+
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    margin: 30px;
+}
+
+.input_search {
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    width: 100%;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #c2f0db;
+    color: #0d0c22;
+    box-shadow: 0 0 5px #58cf98, 0 0 0 10px #f5f5f5eb;
+    transition: .3s ease;
+}
+
+.input_search::placeholder {
+    color: #777;
+}
+
+.icon {
+    position: absolute;
+    left: 1rem;
+    fill: #777;
+    width: 1rem;
+    height: 1rem;
+}
+
+.cards-providers-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 100px;
+    margin: 20px;
+    position: relative;
+}
+
+.card-provider {
+    width: 310px;
+    height: auto;
+    background: #01633ae1;
+    border-radius: 15px;
+    box-shadow: 1px 5px 60px 0px #01633ae1;
+    padding: 20px;
+}
+
+.card-provider .card-provider-border-top {
+    width: 90%;
+    height: 2%;
+    background: #58cf98;
+    margin: auto;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.card-provider span {
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.card-provider .medicines {
+    margin-bottom: -10px;
+    font-weight: bold;
+    color: white;
+}
+
+.card-provider .medicine_data {
+    margin-bottom: 10px;
+    font-weight: 350;
+    color: white;
+    display: block;
+    padding-top: 3px;
+    font-size: 12px;
+}
+
+.card-provider .medicine_name::before {
+    content: "Medicine: ";
+    font-weight: bold;
+}
+
+.card-provider .medicine_description::before {
+    content: "Description: ";
+    font-weight: bold;
+}
+
+.card-provider .medicine_laboratory::before {
+    content: "Laboratory: ";
+    font-weight: bold;
+}
+
+.card-provider .medicine_price::before {
+    content: "Price: ";
+    font-weight: bold;
+}
+
+.card-provider .medicine_stock::before {
+    content: "Stock: ";
+    font-weight: bold;
+}
+
+.card-provider .medicine_name {
+    list-style-type: disc;
+}
+
+.card-provider .medicine_description,
+.medicine_laboratory,
+.medicine_price,
+.medicine_stock {
+    list-style-type: none;
+}
+
+.card-provider .providers_buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0px;
+}
+
+.card-provider button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-weight: 400;
+    margin: 5px
+}
+
+.card-provider button:disabled, .addProvider_button:disabled {
+    background-color: #999797;
+    border: #999797;
+    color: #272626;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.card-provider .update_button {
+    background-color: #7bb9f7;
+}
+
+.card-provider .update_button:hover {
+    background: #b6d7f8;
+}
+
+.card-provider .add_button {
+    background-color: #00b894;
+}
+
+.card-provider .add_button:hover {
+    background: #afe7cd;
+}
+
+.card-provider .delete_button {
+    background-color: #ff9999;
+}
+
+.card-provider .delete_button:hover {
+    background: #facbcb;
+}
+
+.addProvider_button {
+    position: absolute;
+    left: 800px;
+    border: 2px solid #FEDA63;
+    background-color: #FEDA63;
+    border-radius: 0.9em;
+    padding: 0.8em 1.2em 0.8em 1em;
+    transition: all ease-in-out 0.2s;
+    font-size: 16px;
+}
+
+.addProvider_button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0d0c22;
+    font-weight: 600;
+}
+
+.addProvider_button:hover {
+    background-color: #FEE9A3;
+}

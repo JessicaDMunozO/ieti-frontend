@@ -1,0 +1,118 @@
+.bodyMainPage {
+    height: 100vh;
+    position: relative;
+    left: 20%;
+    color: #013620e1;
+  }
+
+  .cards-container-mainPage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 50px;
+    margin: 20px;
+    position: relative;
+}
+
+.card-mainPage {
+    width: 190px;
+    height: auto;
+    background: #01633ae1;
+    border-radius: 15px;
+    box-shadow: 1px 5px 60px 0px #01633ae1;
+    padding: 15px;
+}
+
+.card-mainPage .card-main-border-top {
+    width: 90%;
+    height: 2%;
+    background: #58cf98;
+    margin: auto;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.card-mainPage span {
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.card-mainPage .document::before {
+    content: "Document: ";
+    font-weight: bold;
+}
+
+.card-mainPage .address::before {
+    content: "Address: ";
+    font-weight: bold;
+}
+
+.card-mainPage .delivered::before {
+    content: "Delivered: ";
+    font-weight: bold;
+}
+
+.card-mainPage .doctor::before {
+    content: "Doctor: ";
+    font-weight: bold;
+}
+
+.card-mainPage .domicile::before {
+    content: "Domicile: ";
+    font-weight: bold;
+}
+
+.card-mainPage .provider::before {
+    content: "Provider: ";
+    font-weight: bold;
+}
+
+.card-mainPage .medicines::before {
+    content: "Medicines: ";
+    font-weight: bold;
+}
+
+.card-mainPage .document,
+.card-mainPage .address,
+.card-mainPage .delivered,
+.card-mainPage .doctor,
+.card-mainPage .domicile,
+.card-mainPage .provider,
+.card-mainPage .medicines,
+.card-mainPage .medicine {
+    font-weight: 400;
+    color: white;
+    display: block;
+    padding-top: 3px;
+    font-size: 12px;
+}
+
+.card-mainPage .medicine {
+    margin-left: -20px;
+}
+
+.card-mainPage button {
+    padding: 8px 25px;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    border: none;
+    margin-top: 30px;
+    background: #58cf98;
+    color: white;
+    font-weight: 600;
+}
+
+.card-mainPage button:disabled {
+    background-color: #999797;
+    color: #272626;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.card-mainPage button:hover {
+    background: #afe7cd;
+}
