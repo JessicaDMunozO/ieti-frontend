@@ -30,6 +30,7 @@ Una vez este corriendo el front se puede ingresar a la siguiente dirección http
 ![image](https://github.com/JessicaDMunozO/ieti-frontend/assets/123814482/fcf19a16-4120-40cd-baa3-d21ab18f0b47)
 
 **NOTA**
+
 Es necesario correr el backend también para que se puedan hacer las peticiones sin problemas. (Las instrucciones para correr el backend se encuentran en el repositorio https://github.com/RicardoPR17/ieti-backend)
 
 ## Diseño
@@ -56,9 +57,9 @@ un archivo *.jsx* que contiene la lógica o comportamiento. Los componentes que 
 
 - **Prescriptions:** Este componente sólo estará habilitado para un usuario con rol "doctor". Allí podrá crear una orden, nuevamente debe mandar el token en los encabezados de la solicitud y se mandan los datos suministrados en el formulario para crear una orden. Se tiene un campo numérico para indicar la cantidad de medicinas con las que se creará la orden. 
   
-- **Profile:** En este componente el usaurio podrá ver los datos que tiene registrados.
+- **Profile:** En este componente el usuario podrá ver los datos que tiene registrados.
 
-- **UpdateUser:** En este componente el usaurio podrá actualizar sus datos, en particular los correspondientes a: dirección, ciudad, teléfono y eps.
+- **UpdateUser:** En este componente el usuario podrá actualizar sus datos, en particular los correspondientes a: dirección, ciudad, teléfono y eps.
 
 - Por último podrá hacer **log out** y será redirigido a la pestaña del Log in.
 
