@@ -14,6 +14,7 @@ const Providers = () => {
     const localStorageToken = localStorage.getItem("token");
     const role = JSON.parse(localStorage.getItem("role"));
 
+
     useEffect(() => {
         if (localStorageToken) {
             const token = JSON.parse(localStorageToken);
@@ -71,10 +72,10 @@ const Providers = () => {
                 </svg>
                 <input placeholder="Providers or medicines... " type="search" className="input_search" value={search} onChange={handleSearchChange} />
             </div>
-            <div className='cards-container'>
+            <div className='cards-providers-container'>
                 {providers.map((provider) => (
-                    <div className="card" key={provider._id}>
-                        <div className="card-border-top">
+                    <div className="card-provider" key={provider._id}>
+                        <div className="card-provider-border-top">
                         </div>
                         <span>Provider {provider.pharmacy}</span>
                         <p className="medicines"> Medicines: </p>

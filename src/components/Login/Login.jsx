@@ -40,7 +40,6 @@ const Login = () => {
             localStorage.setItem("token", JSON.stringify(token));
             localStorage.setItem("role", JSON.stringify(role));
             localStorage.setItem("document", parseInt(document));
-
     
             navigate('/mainPage');
         } catch (error) {

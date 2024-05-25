@@ -1,12 +1,9 @@
 .bodyProviders {
     height: 100vh;
-   
-    margin: 0;
     position: relative;
     left: 20%;
     color: #013620e1;
-
-}*/
+}
 
 .group {
     display: flex;
@@ -44,18 +41,15 @@
     height: 1rem;
 }
 
-.cards-container {
+.cards-providers-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 100px;
     margin: 20px;
     position: relative;
-    display: flex;
-    
-    width: 400rem;
 }
 
-.card {
+.card-provider {
     width: 310px;
     height: auto;
     background: #01633ae1;
@@ -64,7 +58,7 @@
     padding: 20px;
 }
 
-.card .card-border-top {
+.card-provider .card-provider-border-top {
     width: 90%;
     height: 2%;
     background: #58cf98;
@@ -72,7 +66,7 @@
     border-radius: 0px 0px 15px 15px;
 }
 
-.card span {
+.card-provider span {
     font-weight: 700;
     color: white;
     text-align: center;
@@ -81,12 +75,13 @@
     font-size: 16px;
 }
 
-.card .medicines {
+.card-provider .medicines {
     margin-bottom: -10px;
     font-weight: bold;
+    color: white;
 }
 
-.card .medicine_data {
+.card-provider .medicine_data {
     margin-bottom: 10px;
     font-weight: 350;
     color: white;
@@ -95,49 +90,49 @@
     font-size: 12px;
 }
 
-.card .medicine_name::before {
+.card-provider .medicine_name::before {
     content: "Medicine: ";
     font-weight: bold;
 }
 
-.card .medicine_description::before {
+.card-provider .medicine_description::before {
     content: "Description: ";
     font-weight: bold;
 }
 
-.card .medicine_laboratory::before {
+.card-provider .medicine_laboratory::before {
     content: "Laboratory: ";
     font-weight: bold;
 }
 
-.card .medicine_price::before {
+.card-provider .medicine_price::before {
     content: "Price: ";
     font-weight: bold;
 }
 
-.card .medicine_stock::before {
+.card-provider .medicine_stock::before {
     content: "Stock: ";
     font-weight: bold;
 }
 
-.card .medicine_name {
+.card-provider .medicine_name {
     list-style-type: disc;
 }
 
-.card .medicine_description,
+.card-provider .medicine_description,
 .medicine_laboratory,
 .medicine_price,
 .medicine_stock {
     list-style-type: none;
 }
 
-.card .providers_buttons {
+.card-provider .providers_buttons {
     display: flex;
     justify-content: space-around;
     margin-top: 0px;
 }
 
-.card button {
+.card-provider button {
     padding: 10px 20px;
     border-radius: 8px;
     border: none;
@@ -146,27 +141,35 @@
     margin: 5px
 }
 
-.card .update_button {
+.card-provider button:disabled, .addProvider_button:disabled {
+    background-color: #999797;
+    border: #999797;
+    color: #272626;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.card-provider .update_button {
     background-color: #7bb9f7;
 }
 
-.card .update_button:hover {
+.card-provider .update_button:hover {
     background: #b6d7f8;
 }
 
-.card .add_button {
+.card-provider .add_button {
     background-color: #00b894;
 }
 
-.card .add_button:hover {
+.card-provider .add_button:hover {
     background: #afe7cd;
 }
 
-.card .delete_button {
+.card-provider .delete_button {
     background-color: #ff9999;
 }
 
-.card .delete_button:hover {
+.card-provider .delete_button:hover {
     background: #facbcb;
 }
 

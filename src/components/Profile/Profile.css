@@ -1,9 +1,10 @@
-
 .bodyProfile{
   display:flex !important;
   justify-content: center;
   align-items: center;
   left: 20%;
+  margin-top: 90px;
+  margin-left: 280px;
 }
 .cardUser {
   display: flex;

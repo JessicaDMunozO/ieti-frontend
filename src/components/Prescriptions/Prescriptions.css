@@ -1,5 +1,5 @@
 .bodyCreatePrescriptions {
-    margin-left: 250px;
+    margin-left: 500px;
     margin-top: 20px;
     height: auto;
     display: flex;
@@ -111,7 +111,7 @@
       transform: .3s ease;
       background-color: #01633ae1;
     }
-    
+
     .submit:hover {
       background-color: #58cf98;
     }

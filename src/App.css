@@ -1,14 +1,20 @@
 body {
   position: relative;
- 
   background-image: linear-gradient(to bottom right, #00FF87 0%, #60EFFF 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 .bodyLogin, .bodySignup {
-  margin-left: 200px;
-  height: 100vh;
+  margin-left: 450px;
   display: flex;
   align-items: center;
+}
+
+.bodyLogin {
+  height: 100vh;
+}
+
+.bodySignup {
+  height: 120vh;
 }

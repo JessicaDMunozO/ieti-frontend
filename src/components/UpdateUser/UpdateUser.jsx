@@ -16,9 +16,6 @@ const UpdateUser = () => {
 
   const localStorageToken = localStorage.getItem("token");
 
-
-
-
   const handleAddressChange = (event) => {
     const value = event.target.value;
     setAddress(value);
