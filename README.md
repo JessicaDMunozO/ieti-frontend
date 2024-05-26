@@ -66,3 +66,4 @@ un archivo *.jsx* que contiene la lógica o comportamiento. Los componentes que 
 Para realizar las peticiones al backend se utilizó axios indicando la URL, mandando el cuerpo de la solicitud (si se requiere) y el token para que se permita el acceso a nuestros servicios. Además, como se mencionó antes, los elementos a mantener entre componentes como el token, el rol y el documento se almacenaron con *localStorage*. Por su parte en el componente principal *App* se importaron todos los componentes necesarios y se definieron las rutas para estos. 
 
 ## Video demostración
+https://youtu.be/lh1PjxBgeXg 
